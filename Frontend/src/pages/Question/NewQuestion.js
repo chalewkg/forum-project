@@ -46,29 +46,25 @@ const NewQuestion = () => {
         <h3 className="step">Steps to write a good question</h3>
         <ul className="list">
           <li>
-            {" "}
             <span>
-              <FaCircle className="px-1" />{" "}
+              <FaCircle className="px-1" />
               {/* Use FaCircle for bullet point */}
             </span>
             Summarize your question in a one-line title.
           </li>
           <li>
-            {" "}
             <span>
               <FaCircle className="px-1" />
             </span>
             Describe your problem in more detail.
           </li>
           <li>
-            {" "}
             <span>
               <FaCircle className="px-1" />
             </span>
             Describe what you tried and what you expected to happen.
           </li>
           <li>
-            {" "}
             <span>
               <FaCircle className="px-1" />
             </span>
@@ -81,7 +77,6 @@ const NewQuestion = () => {
         <div className="input_description ">
           <h3>Ask a public question</h3>
           <div className="mb-3">
-            {" "}
             <Link className="li" to="/all-questions">
               Go to Question Page
             </Link>

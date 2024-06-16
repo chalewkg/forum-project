@@ -32,17 +32,12 @@ function Home() {
           </p>
 
           <p>
-            Wheather you are willing to share your knowledge or you are just
+            Weather you are willing to share your knowledge or you are just
             looking to meet mentors of your own, please start by joining the
             network here.
           </p>
-          <button className="button-home">
-            <a
-              className="home-link"
-              href="https://www.evangadi.com/explained/"
-            >
+          <button className="button-home home-link">
               HOW IT WORKS
-            </a>
           </button>
         </div>
       </div>

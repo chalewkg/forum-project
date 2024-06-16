@@ -45,8 +45,8 @@ function Homepage() {
 
   return (
     <div className="container">
-      <div className="homp ">
-        <div className=" hed ">
+      <div className="home ">
+        <div className=" head ">
           <div className="row askque">
             <div className="col-md-6   ">
               <button className="qb   " onClick={handleclick}>
