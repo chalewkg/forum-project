@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from '../../axiosConfig';
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 import './Register.css'
-function Register() {
+function Register({toggle}) {
   const [password, setpassword] = useState("");
   const [visible, setVisble] = useState(true);
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ function Register() {
         password: passValue,
       });
       alert("registered successfully. please login");
-      navigate("/login");
+      toggle();
     } catch (error) {
       alert("something went wrong");
       console.log(error.message);
@@ -105,31 +105,29 @@ function Register() {
             id="password"
             onChange={(e) => setpassword(e.target.value)}
             placeholder="password"
-          />{" "}
+          />
           <span className="icon-pass" onClick={() => setVisble(!visible)}>
             {visible ? <EyeOutlined /> : <EyeInvisibleOutlined />}
           </span>
         </div>
         <br />
-        <button
-          className="login-btn btn btn-lg btn-primary btn-block"
-          type="submit"
-        >
-          Agree and Join
-        </button>
-
         <br />
         <p>
-  I agree to the{" "}
+  I agree to the
   <Link className="lnk-toggler" to={"https://www.evangadi.com/legal/privacy/"}>
     privacy policy
   </Link>
-  {" "}and{" "}
+  and
   <Link className="lnk-toggler" to={"https://www.evangadi.com/legal/terms/"}>
     terms of service.
   </Link>
 </p>
-
+      <button
+          className="login-btn btn btn-lg btn-primary btn-block col-11"
+          type="submit"
+        >
+          Agree and Join
+        </button>
         <Link className="lnk-toggler" to={"/login"}>
           Already have an account?
         </Link>

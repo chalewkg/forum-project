@@ -40,16 +40,14 @@
   
  
   @media screen and (min-width: 1200px) {
-    /* Styles for large screens */
     .info {
-      flex: 1; /* Allow the info section to grow and take up the remaining space */
-      margin-right: 20px; /* Add some space between the sections */
+      flex: 1;
+      margin-right: 20px;
     }
   
     .my-section {
-      flex: 1; /* Allow the my-section section to grow and take up the remaining space */
-      margin-left: 20px; /* Add some space between the sections */
- 
+      flex: 1; 
+      margin-left: 20px; 
       padding: 2%;
       height: 500px;
       overflow: hidden;
@@ -82,8 +80,8 @@
       border: none !important;
       width: 100%;
       margin: 0;
-      background-color: #fe8402 !important; /* Change the background color to #fe8402 */
-      color: white; /* Change the text color to white */
+      background-color: #fe8402;
+      color: white; 
     }
   
     .custom-login-btn:hover {
