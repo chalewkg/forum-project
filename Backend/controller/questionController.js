@@ -7,7 +7,7 @@ async function postQuestions(req, res) {
   // const userid = req.user.userid;
   // const questionid = uuidv4();
   req.body.questionid = uuidv4();
-  const { questionid ,userid, title, description, tag } = req.body;
+  const {userid, title, description, tag } = req.body;
   if (!title || !description) {
     return res
       .status(StatusCodes.BAD_REQUEST)
@@ -16,8 +16,8 @@ async function postQuestions(req, res) {
   
   try {
     await dbConnection.query(
-      "INSERT INTO questions(questionid, userid, title, description, tag) VALUES (?, ?, ?, ?, ?)",
-      [questionid, userid, title, description, tag]
+      "INSERT INTO questions(questionid, userid, title, description, tag) VALUES (?, ?, ?, ?)",
+      [userid, title, description, tag]
     );
     return res.status(StatusCodes.CREATED).json({
       msg: "Question posted successfully. Redirecting to home page.",

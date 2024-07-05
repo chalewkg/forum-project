@@ -12,6 +12,7 @@ const NewQuestion = () => {
     userid: user?.userid,
     title: "",
     description: "",
+tag:"",
   });
   // console.log(form);
 
@@ -104,6 +105,19 @@ const NewQuestion = () => {
               name="description"
               placeholder="Question Description..."
               value={form.description}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+
+<div>
+            <input
+              className="input_text_title input_text_one"
+              type="text"
+              name="tag"
+              placeholder="Tag"
+              value={form.tag}
               onChange={handleChange}
               required
             />

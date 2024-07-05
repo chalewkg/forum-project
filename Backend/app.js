@@ -6,7 +6,23 @@ const app = express();
 const port = 5500;
 const cors = require("cors");
 
-app.use(cors());
+
+// Add console.log statements to print environment variables
+console.log('HOST:', process.env.HOST);
+console.log('USER:', process.env.USER);
+console.log('PASSWORD:', process.env.PASSWORD);
+console.log('DATABASE:', process.env.DATABASE);
+
+
+//app.use(cors());
+
+// Configure CORS
+app.use(cors({
+  origin: 'http://www.evngadiforum.com', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
+}));
+
 //db connection
 const dbconnection = require("./db/dbConfig");
 
