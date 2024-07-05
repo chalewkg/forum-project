@@ -1,3 +1,4 @@
+
 const { StatusCodes } = require("http-status-codes");
 const dbConnection = require("../db/dbConfig");
 const { v4: uuidv4 } = require('uuid');
@@ -6,7 +7,7 @@ const { v4: uuidv4 } = require('uuid');
 async function postQuestions(req, res) {
   // const userid = req.user.userid;
   // const questionid = uuidv4();
-  req.body.questionid = uuidv4();
+const id = uuidv4();
   const {userid, title, description, tag } = req.body;
   if (!title || !description) {
     return res
@@ -16,8 +17,8 @@ async function postQuestions(req, res) {
   
   try {
     await dbConnection.query(
-      "INSERT INTO questions(questionid, userid, title, description, tag) VALUES (?, ?, ?, ?)",
-      [userid, title, description, tag]
+      "INSERT INTO questions(userid, title, description, tag, id) VALUES (?, ?, ?, ?, ?)",
+      [userid, title, description, tag, id] 
     );
     return res.status(StatusCodes.CREATED).json({
       msg: "Question posted successfully. Redirecting to home page.",

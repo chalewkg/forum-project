@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "build")));
 //redirect the request to the index.html file
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
-<<<<<<< HEAD
+
 //});
 // Listen on port 3000
 //const PORT = process.env.PORT || 5500;
@@ -38,4 +38,4 @@ app.get("/*", (req, res) => {
 =======
 }); //listen to the port 80
 app.listen(80);
->>>>>>> c1aa0da45596e4fb090710b444548aac3a2d267b
+
